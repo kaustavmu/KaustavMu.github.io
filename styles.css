@@ -11,6 +11,11 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcd00",endColorstr="#ff89b7",GradientType=1);
 }
 
+#titlebox {
+    margin: auto;
+    width: 80%;
+}
+
 #title {
     color: rgb(0, 0, 0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
