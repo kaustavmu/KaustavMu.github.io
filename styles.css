@@ -13,24 +13,65 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    gap: 0px;
+    overflow: auto;
 }
 
 #navbar {
     height: 50pt;
     width: 100%;
-    float: none;
     background: rgb(0, 0, 0);
     margin: 0pt;
     padding: 0pt;
     flex: 0 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#blend {
+    background-color: white;
+    color: black;
+    font-size: 10vw; /* Responsive font size */
+    font-weight: bold;
+    margin: 0 auto; /* Center the text container */
+    padding: 10px;
+    mix-blend-mode: screen;
+}
+
+#page {
+    height: auto;
+    width: 100%;
+    flex: 1 0 auto;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }
 
 #titlebox {
-    margin: auto;
-    width: 80%;
-    float: none;
-    flex: 0 0 auto;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-width: 80%;
+    width: auto;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+#titleboxcolumn {
+    flex: 1 0 auto;
+    height: auto;
+    width: 40%;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #title {
@@ -47,4 +88,29 @@
     font-size: 20pt;
     margin: 0pt;
     padding: 0pt;
+}
+
+#iconbox {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.bi{
+    transition: 0.3s;
+    width: "48";
+    height: "48";
+}
+
+.bi:hover{
+    opacity: 50%;
+}
+
+#profilepic{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
