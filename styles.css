@@ -1,11 +1,14 @@
 #bkg {
+    position: fixed;
+    top: 0;
+    left: 0;
     height: 100%;
     width: 100%;
-    background: rgb(255,218,0);
-    background: -moz-linear-gradient(135deg, rgba(255,218,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
-    background: -webkit-linear-gradient(135deg, rgba(255,218,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
-    background: linear-gradient(135deg, rgba(255,218,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffda00",endColorstr="#ff89b7",GradientType=1);
+    background: rgb(255,205,0);
+    background: -moz-linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
+    background: -webkit-linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
+    background: linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcd00",endColorstr="#ff89b7",GradientType=1);
 }
 
 #title {
