@@ -4,11 +4,18 @@
         <link rel="stylesheet" href="styles.css"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="google-site-verification" content="1BJeuKehY5ySdcdVMF9swLXb__oF0cY7x1bqw2Pc9Ks" />
+        <script type="text/javascript" src="script.js"></script>
     </head>
     <body>
         <div id="bkg">
-            <div id="navbar"></div>
-            <div id="page">
+            <div id="navbar">
+                <div id="navleft"></div>
+                <button id="home" class="blend blend2" onclick="Navbar(0)">Home</button>
+                <button id="aboutme" class="blend" onclick="Navbar(1)">About Me</button>
+                <button id="projects" class="blend" onclick="Navbar(2)">Projects</button>
+                <div id="navright"></div>
+            </div>
+            <div id="homediv" class="page" style="display: block;">
                 <div id="titlebox">
                     <div id="titleboxcolumn">
                         <p id="title">Kaustav</p>
@@ -32,11 +39,28 @@
                             </a>
                         </div>
                     </div>
+                    <div id="titleboxgap"></div>
                     <div id="titleboxcolumn">
                         <img src="Profile Picture.jpg" alt="My profile picture." id="profilepic"/>
                     </div>
                 </div>
-            </div>  
+            </div>
+            <div id="aboutmediv" class="page" style="display: none;">
+                <div id="titlebox">
+                    <div id="titleboxcolumn">
+                        <p id="title">Coming</p>
+                        <p id="title">Soon!</p>
+                    </div>
+                </div>
+            </div>
+            <div id="projectsdiv" class="page" style="display: none;">
+                <div id="titlebox">
+                    <div id="titleboxcolumn">
+                        <p id="title">Coming</p>
+                        <p id="title">Soon!</p>
+                    </div>
+                </div>
+            </div>   
         </div>  
     </body>
 </html>
