@@ -12,9 +12,11 @@
 }
 
 #title {
-    color: rgb(25, 0, 255);
+    color: rgb(0, 0, 0);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #subtitle {
     color: rgb(255, 0, 0);
+    font-family: monospace;
 }
