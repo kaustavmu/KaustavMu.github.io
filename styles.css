@@ -1,3 +1,5 @@
+/* Background */
+
 #bkg {
     position: fixed;
     top: 0;
@@ -5,7 +7,7 @@
     height: 100%;
     width: 100%;
     background: rgb(255,205,0);
-    background: -moz-linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
+    background: -moz-linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgb(255, 137, 183) 100%);
     background: -webkit-linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
     background: linear-gradient(135deg, rgba(255,205,0,1) 0%, rgba(255,203,139,1) 35%, rgba(255,137,183,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffcd00",endColorstr="#ff89b7",GradientType=1);
@@ -15,6 +17,8 @@
     align-items: center;
     overflow: auto;
 }
+
+/* Navbar */
 
 #navbar {
     height: 50pt;
@@ -30,6 +34,23 @@
 }
 
 .blend {
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-size: 20pt;
+    font-family: monospace;
+    margin: 0;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    mix-blend-mode: multiply;
+    flex: 0 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+}
+
+.titleblend {
     border: none;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
@@ -70,6 +91,8 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+/* Page Divs */
+
 .page {
     height: auto;
     width: 100%;
@@ -82,40 +105,449 @@
     align-items: center;
 }
 
+/* Title Page */
+
 #titlebox {
     margin: 0 auto;
     max-width: 80%;
-    height: 100%;
+    height: auto;
     width: auto;
     flex: 1 0 auto;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-evenly;
+    align-items: flex-end;
     flex-wrap: wrap;
 }
 
 #titleboxcolumn {
     flex: 1 0 auto;
-    height: auto;
+    min-height: 100vh;
     width: 40%;
-    min-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
 }
 
-#titleboxgap {
-    height: auto;
-    width: 50px;
+#titleboxsubcolumn {
+    flex: 1 0 auto;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
+#profilepic{
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.75vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-attachment: fixed;
+}
+
+.resume {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.5vw;
+    margin: 0;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+    color:rgb(0, 0, 0);
+    text-decoration: none;
+    text-decoration-color: black;
+}
+
+.resumebutton {
+    border-style: solid;
+    border-width: 0.25vw;
+    height: 2.5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color:rgb(0, 0, 0);
+}
+
+.resumebutton:hover {
+    opacity: 50%;
+}
+
+/* About Page */
+
+#aboutbox {
+    background-color: rgb(0, 0, 0, 0.9);
+    margin: 0 auto;
+    padding: 7vw;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+#aboutpic{
+    max-width: 40%;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+    height: auto;
+    border-radius: 0.75vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#abouttext {
+    color: rgb(255, 255, 255);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1.5vw;
+    margin: 0pt;
+    padding: 0pt;
+}
+
+/* Internships Page */
+
+#internshipbox {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: center;
+    padding: 7vw;
+    gap: 4vw;
+}
+
+#internship {
+    padding: 1vw;
+    background-color: white;
+    border-style: inset;
+    border-color: black;
+    border-radius: 2vw;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    align-items: flex-start;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+#internshipleftcolumn {
+    width: 40vw;
+    text-align: right;
+    padding: 2vw;
+}
+
+#internshiprightcolumn {
+    width: 40vw;
+    text-align: left;
+    padding: 2vw;
+}
+
+#internshiplogo {
+    height: 8vw;
+    border-radius: 1vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#internshipname {
+    color: black;
+    font-size: 3vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#internshipduration {
+    color: rgb(63 63 63);
+    font-size: 2vw;
+    font-family: monospace;
+    margin-top: 0;
+}
+
+#internshipposition {
+    color: black;
+    font-size: 2vw;
+    font-family: monospace;
+}
+
+#internshipdetails {
+    color: black;
+    font-size: 1.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Education Page */
+
+#schoolbox {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+#school {
+    width: 50vw;
+    padding: 4vw;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#schoollogo {
+    height: 8vw;
+    border-radius: 1vw;
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+
+#schoolname {
+    color: white;
+    font-size: 3vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 0;
+}
+
+#schoolyears {
+    color: rgb(255,205,0);
+    font-size: 2vw;
+    font-family: monospace;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+#schooldegree {
+    color: white;
+    font-size: 1.5vw;
+    font-family: monospace;
+    margin: 0;
+}
+
+#schoolnotes {
+    color: white;
+    font-size: 1vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Projects Page */
+
+#projectsbox {
+    background-color: white;
+    margin: 0 auto;
+    /* margin-top: 7vw; */
+    /* margin-bottom: 7vw; */
+    padding: 7vw;
+    /* max-width: 80%; */
+    width: auto;
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border-radius: 25px; */
+    box-shadow: inset 0 8px 16px 0 rgba(0, 0, 0, 0.2), inset 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+}
+
+#project {
+    max-width: 80%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 4vw;
+}
+
+#projectlogo {
+    height: 8vw;
+    border-radius: 1vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#projectname {
+    color: black;
+    font-size: 3vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 0;
+}
+
+#projectduration {
+    color: rgb(63 63 63);
+    font-size: 2vw;
+    font-family: monospace;
+    margin-top: 0;
+}
+
+#projectposition {
+    color: black;
+    font-size: 2vw;
+    font-family: monospace;
+    margin-bottom: 0;
+}
+
+#projectdetails {
+    color: black;
+    font-size: 1.5vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+/* Experience */
+
+.experiencediv {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+    margin: 0;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.experiencecolumn {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin-left: 10vw;
+}
+
+.experiencetop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.experiencebottom {
+    margin-left: 1.25vw;
+}
+
+.experiencegallery {
+    display: flex;
+    flex-direction: row;
+    padding: 1vw;
+    gap: 2vw;
+}
+
+.experiencelogo {
+    height: 8vw;
+    border-radius: 1vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 1vw;
+}
+
+.experiencename {
+    color: black;
+    font-size: 3vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.experiencedate {
+    color: rgb(63 63 63);
+    font-size: 1.5vw;
+    font-family: monospace;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.experienceposition {
+    color: black;
+    font-size: 1.5vw;
+    font-family: monospace;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.experiencedescription {
+    color: black;
+    font-size: 0.9vw;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0.2vw;
+}
+
+.experiencepic {
+    width: 10vw;
+    height: 7.5vw;
+    object-fit: cover;
+}
+
+.experiencepic:hover {
+    opacity: 0.7;
+}
+
+/* Skills */
+
+.skilldiv {
+    background: linear-gradient(rgba(0,0,0,1) 99%, rgba(0,0,0,0) 100%);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4vw;
+}
+
+.skilltable {
+    
+}
+
+.row {
+
+}
+
+.row2 {
+
+}
+
+.category {
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.25vw;
+    text-decoration: underline;
+}
+
+.categoryheader {
+    padding-top: 1vw;
+}
+
+.skill {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    vertical-align: bottom;
+    padding-left: 4vw;
+    padding-right: 4vw;
+}
+
+.level {
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1vw;
+    vertical-align: bottom;
+}
+
+/* Footer */
+
+.footer {
+    margin-top: 2vw;
+}
+
+/* Fonts */
 
 #title {
     color: rgb(0, 0, 0);
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: min(17vw, 70pt);
+    font-size: 7vw;
     padding: 0pt;
     margin:  0pt;
 }
@@ -123,32 +555,285 @@
 #subtitle {
     color: rgb(63 63 63);
     font-family: monospace;
-    font-size: 20pt;
+    font-size: 1.5vw;
     margin: 0pt;
     padding: 0pt;
 }
 
+#bodytext {
+    color: rgb(0, 0, 0);
+    font-family: monospace;
+    font-size: 15pt;
+    margin: 0pt;
+    padding: 0pt;
+}
+
+.white-highlight{
+    background-color:rgb(255, 255, 255);
+    padding:0.1em 0.2em;
+}
+
+/* Icons */
+
 #iconbox {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 1.75vw;
+    margin-bottom: 1.75vw;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 1.5vw;
 }
 
 .bi{
     transition: 0.3s;
-    width: "48";
-    height: "48";
+    width: 3vw;
+    height: 3vw;
 }
 
 .bi:hover{
     opacity: 50%;
 }
 
-#profilepic{
-    max-width: 100%;
+.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+  }
+  
+.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+.gallery img {
+    width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  
+.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+#ProjectsHR {
+    /* color: rgb(0, 0, 0); */
+    /* mix-blend-mode: multiply; */
+    border: none; 
+    border-bottom: 1px solid gainsboro;  
+}
+
+/* Style the Image Used to Trigger the Modal */
+#myImg {
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+  
+#myImg:hover {opacity: 0.7;}
+  
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+  
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+  
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+  
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+  
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+  
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+  
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.fade-in {
+    animation: fadeIn 1s;
+    -webkit-animation: fadeIn 1s;
+    -moz-animation: fadeIn 1s;
+    -o-animation: fadeIn 1s;
+    -ms-animation: fadeIn 1s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+}
+  
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+  
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.fromleft {
+    animation: rightToLeft 1s;
+    -webkit-animation: rightToLeft 1s;
+    -moz-animation: rightToLeft 1s;
+    -o-animation: rightToLeft 1s;
+    -ms-animation: rightToLeft 1s;
+    overflow-x: hidden;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    -ms-animation-fill-mode: both;
+}
+
+@keyframes rightToLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0px);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .page {
+        /* margin-top: 2vh; */
+        /* margin-bottom: 2vh; */
+    }
+
+    #titlebox {
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+
+    #titleboxcolumn {
+      width:100%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      flex: 0 0 auto;
+    }
+
+    #title {
+        font-size: 17vw;
+    }
+    
+    #subtitle {
+        font-size: 4vw;
+    }
+
+    #iconbox {
+        margin-top: 5vw;
+        margin-bottom: 5vw;
+        gap: 4vw;
+    }
+    
+    .bi{
+        width: 8vw;
+        height: 8vw;
+    }
+
+    #aboutpic{
+        max-width: 80%;
+    }
+
+    #schoolbox {
+        flex-direction: column;
+    }
+    
+    #school {
+        width: 100%;
+        padding: 8vw;
+    }
+    
+    #schoollogo {
+        height: 16vw;
+        border-radius: 2vw;
+    }
+    
+    #schoolname {
+        color: white;
+        font-size: 3vw;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin-bottom: 0;
+    }
+    
+    #schoolyears {
+        color: rgb(255,205,0);
+        font-size: 2vw;
+        font-family: monospace;
+        margin-top: 0;
+    }
+    
+    #schooldegree {
+        color: white;
+        font-size: 2vw;
+        font-family: monospace;
+    }
+    
+    #schoolnotes {
+        color: white;
+        font-size: 1vw;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
 }

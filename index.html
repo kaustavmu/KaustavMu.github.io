@@ -8,59 +8,579 @@
     </head>
     <body>
         <div id="bkg">
-            <div id="navbar">
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- The Close Button -->
+                <span onclick="closemodal()" id="closebutton" class="close">&times;</span>
+
+                <!-- Modal Content (The Image) -->
+                <img class="modal-content" id="img01">
+
+                <!-- Modal Caption (Image Text) -->
+                <div id="caption"></div>
+            </div>
+            <!-- <div id="navbar">
                 <div id="navleft"></div>
                 <button id="home" class="blend blend2" onclick="Navbar(0)">Home</button>
                 <button id="aboutme" class="blend" onclick="Navbar(1)">About Me</button>
-                <button id="projects" class="blend" onclick="Navbar(2)">Projects</button>
+                <button id="aeronus" class="blend" onclick="Navbar(2)">AeroNUS</button>
+                <button id="eg3301r" class="blend" onclick="Navbar(3)">EG3301R</button>
+                <button id="eg2310" class="blend" onclick="Navbar(4)">EG2310</button>
+                <button id="otherprojects" class="blend" onclick="Navbar(5)">Other Projects</button>
                 <div id="navright"></div>
-            </div>
-            <div id="homediv" class="page" style="display: block;">
-                <div id="titlebox">
+            </div> -->
+            <div id="homediv" class="page" style="display: block; min-height: 100%;">
+                <div id="titlebox" style="overflow: clip;">
                     <div id="titleboxcolumn">
-                        <p id="title">Kaustav</p>
-                        <p id="title">Mukherjee</p>
-                        <p id="subtitle">Mechanical Engineer, Designer, Problem Solver.</p>
-                        <div id="iconbox">
-                            <a href="https://www.linkedin.com/in/kaustavmu/">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-linkedin" viewBox="0 0 16 16">
-                                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                                </svg>
-                            </a>
-                            <a href="https://github.com/kaustavmu">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-github" viewBox="0 0 16 16">
-                                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                                </svg>
-                            </a>
-                            <a href="mailto:kaustav.mukherjee2020@gmail.com">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-envelope" viewBox="0 0 16 16">
-                                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-                                </svg>
-                            </a>
+                        <div id="titleboxsubcolumn">
+                            <p id="title" class="fromleft">Kaustav</p>
+                            <p id="title" class="fromleft" style="animation-delay: 0.25s">Mukherjee</p>
+                            <p id="subtitle" class="fade-in" style="animation-delay: 1s">Unmanned Systems - Aviation - Design</p>
+                            <div id="iconbox" class="fade-in" style="animation-delay: 1s">
+                                <a href="https://www.linkedin.com/in/kaustavmu/">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                                    </svg>
+                                </a>
+                                <a href="https://github.com/kaustavmu">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-github" viewBox="0 0 16 16">
+                                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                                    </svg>
+                                </a>
+                                <a href="mailto:kaustav.mukherjee2020@gmail.com">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-envelope" viewBox="0 0 16 16">
+                                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                                    </svg>
+                                </a>
+                                <a href="Kaustav Mukherjee Resume.pdf" download>
+                                    <div class="resumebutton">
+                                        <p class="resume" style="text-decoration: none;">DOWNLOAD RESUME</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="titleboxsubcolumn" style="width: 80%; padding-bottom: 7vw;">
+                            <p class="titleblend fromleft" style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7vw; margin-bottom: 1vw;">Hi!</p>
+                            <p id="subtitle" style="font-size: 1.25vw">I love challenges.</p>
+                            <br>
+                            <p id="subtitle" style="font-size: 1.25vw">I spent time designing entire future versions of our robot at SciFie Robotics to hone my skills and get advice from my colleagues.</p>
+                            <br>
+                            <p id="subtitle" style="font-size: 1.25vw">I joined Team AeroNUS knowing nothing about aeronautics, and dedicated an entire year learning, designing, and building to grow into the team's chief engineer.</p>
+                            <br>
+                            <p id="subtitle" style="font-size: 1.25vw">I became responsible for communications systems operation and R&D at F-Drones despite having no experience, and was able to find solutions to our many issues.</p>
+                            <br>
+                            <p id="subtitle" style="font-size: 1.25vw">I love challenges because they're exciting - they mean that I have a chance to learn something new, grow as an engineer, and triumph as a person.</p>
+                            <br>
+                            <p id="subtitle" style="font-size: 1.25vw">I'm currently looking for my next great challenge. As a part of the NUS Overseas Colleges Silicon Valley programme, I'm searching for a year long internship in the greater San Francisco Bay area. If you're a startup looking for someone who's dedicated and thrives in an unfamiliar environment, you'll find me to be a great fit in your company.</p>
+                            <br>
+                        </div>
+                        <!-- <p id="bodytext"><span class="white-highlight">Hi! I'm Kaustav, a 3rd year student at NUS studying Mechanical Engineering and Innovation and Design. Through my internships and projects, I have developed a deep skillset in mechanical design, aviation, and unmanned systems. View some of my portfolio below!</span></p>                         -->
+                    </div>
+                    <div id="titleboxcolumn" style="position: sticky; bottom: 0vh;">
+                        <img src="Profile Picture.jpg" alt="My profile picture." id="profilepic" class="fade-in" style="animation-delay: 1s"/>
+                    </div>
+                </div>
+            </div>
+            <div id="education" style="width: 100%; text-align: center; margin: 0;">
+                <p id="title" class="titleblend" style="color: white;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7vw; padding-top: 1vw; padding-bottom: 1vw;">Education</p>
+            </div>
+            <div id="educationdiv" class="page" style="display: block;">
+                <div id="schoolbox">
+                    <div id="school" style='background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("CISCampus.jpg");'>
+                        <img src="CISLogo.jpg" alt="Canadian International School Logo" id = "schoollogo"/>
+                        <div id="schooltext">
+                            <p id="schoolname">Canadian International School, Singapore</p>
+                            <p id="schoolyears">2018-2020</p>
+                            <p id="schooldegree">IB Diploma, 43/45</p>
+                            <br>
+                            <p id="schoolnotes">President, Model United Nations</p>
+                            <p id="schoolnotes">Co-Founder and President, Global Issues Network</p>
+                            <p id="schoolnotes">Vice President, Student Council</p>
+                            <p id="schoolnotes">2-Time Speaker, TEDxCanadianIntlSchool</p>
                         </div>
                     </div>
-                    <div id="titleboxgap"></div>
-                    <div id="titleboxcolumn">
-                        <img src="Profile Picture.jpg" alt="My profile picture." id="profilepic"/>
+                    <div id="school" style='background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("NUSCampus.jpg");'>
+                        <img src="NUSLogo.jpg" alt="Canadian International School Logo" id = "schoollogo"/>
+                        <div id="schooltext">
+                            <p id="schoolname">National University of Singapore</p>
+                            <p id="schoolyears">2020-2024 (Expected Graduation)</p>
+                            <p id="schooldegree">B. Eng (Hons.) in Mechanical Engineering</p>
+                            <p id="schooldegree">Aeronautical Specialization</p>
+                            <p id="schooldegree">2nd Major in Innovation and Design</p>
+                            <br>
+                            <p id="schoolnotes">Chief Engineer and Mentor, AeroNUS</p>
+                            <p id="schoolnotes">Vice President, Innovation and Design Programme Students' Club</p>
+                            <p id="schoolnotes">Projects Director, Aviation Club</p>                        </div>
                     </div>
-                </div>
+                </div>  
             </div>
-            <div id="aboutmediv" class="page" style="display: none;">
-                <div id="titlebox">
-                    <div id="titleboxcolumn">
-                        <p id="title">Coming</p>
-                        <p id="title">Soon!</p>
-                    </div>
-                </div>
+            <div id="workexperience" style="width: 100%; text-align: center; margin: 0;">
+                <p id="title" class="titleblend" style="color: white;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7vw; padding-top: 1vw; padding-bottom: 1vw;">Work Experience</p>
             </div>
-            <div id="projectsdiv" class="page" style="display: none;">
-                <div id="titlebox">
-                    <div id="titleboxcolumn">
-                        <p id="title">Coming</p>
-                        <p id="title">Soon!</p>
+            <div id="F-Drones" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("FDronesBkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="FDronesLogo.png" alt="F-Drones Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">F-Drones</p>
+                            <p class="experiencedate">May 2022 to September 2022</p>
+                            <p class="experienceposition"> Unmanned Aerial Systems Engineering Intern</p>
+                        </div>
                     </div>
-                </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">At F-Drones, I primarily focused on communication systems and testing and development of autopilot software.</p>
+                        <br>
+                        <p class="experiencedescription">- Setup SITL (Simulation-in-the-Loop) with custom ArduPilot builds.</p>
+                        <p class="experiencedescription">- Created RealFlight models using Solidworks and 3DS Max, and edited ArduPilot parameters to enable proper SITL functionality.</p>
+                        <p class="experiencedescription">- Recreated and diagnosed errors with geofences and ArduPilot bugs and helped determine solutions using SITL.</p>
+                        <p class="experiencedescription">- Defined key SOP for creating new SITL models, adjusting parameters, and using SITL systems for future testing and safety measures.</p>
+                        <p class="experiencedescription">- Researched, purchased, and tested various analog and digital communication modules for long range video and telemetry. Designed various electrical harnesses and testing platforms.</p>
+                        <p class="experiencedescription">- Planned and coordinated with colleagues to perform ground and flight tests of communication modules, and analyzed test results to improve on the systems.</p>
+                        <p class="experiencedescription">- Liaised with partner companies to setup and integrate 4G communication modules, directly enabling near 100% consistent communications and deliveries.</p>
+                        <p class="experiencedescription">- Created Lua scripts and modified ArduPilot code for additional autopilot functionality.</p>
+                        <p class="experiencedescription">- Created mapping tool with Google Maps API to track network strength for various 4G providers across operational areas in Singapore.</p> 
+                        <!-- <p class="experiencedescription"></p> -->
+                    </div>
+                </div>    
+            </div>
+            <div id="SciFie Robotics" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("SciFieBkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="SciFieLogo.jpg" alt="SciFie Robotics Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">SciFie Robotics</p>
+                            <p class="experiencedate">March 2021 to July 2021</p>
+                            <p class="experienceposition"> Robotics Intern</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">I worked on a project with my colleagues to develop a robot intended for surface preparation, paint application, and NDT of large metal structures.</p>
+                        <br>
+                        <p class="experiencedescription">- Collaborated with suppliers such as Olympus Sensors and T&T Salvage to source components and peripherals for our robot.</p>
+                        <p class="experiencedescription">- Created engineering spreadsheets to size parts of the robot depending on the specifications of the surface preparation modules. In conjunction, used FEMM, a magnetic simulation software, to model and optimize the magnetic forces of our robot's mounting system.</p>
+                        <p class="experiencedescription">- Designed various parts of the robot and modelled them using Solidworks, including a magnetic mounting bracket, NDT mounting and couplant delivery assembly, and a hydroblasting arm capable of sustaining 10'000 PSI of water pressure.</p>
+                        <p class="experiencedescription">- Additionally used Solidworks FEA simulations to ensure that appropriate factors of safety were attained in the parts.</p>
+                        <p class="experiencedescription">- Created engineering drawings in Solidworks and performed GD&T according to ISO standards.</p>
+                        <p class="experiencedescription">- Found and worked with various manufacturers to create the parts for our prototype robot.</p>
+                        <p class="experiencedescription">- Worked extensively with a PLC-based control system to add various functionalities and fine-tune the movement of our robot, including smoother turning and increased arm control. Additionally redesigned the software interface for the controls system and created a circuit diagram for the system.</p>
+                        <p class="experiencedescription">- Wrote a business plan for SciFie and compiled slideshows for investor presentations. </p>
+                        <p class="experiencedescription">- Designed the company website using Wix.</p>
+                    </div>
+                </div>    
+            </div>
+            <div id="projects" style="width: 100%; text-align: center; margin: 0;">
+                <p id="title" class="titleblend" style="color: white;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7vw; padding-top: 1vw; padding-bottom: 1vw;">Projects</p>
+            </div>
+            <div id="EG3301R" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("EG3301RBkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="NUSLogo.jpg" alt="NUS Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">EG3301R - Land Robot for Reforestation</p>
+                            <p class="experiencedate">January 2022 - Present</p>
+                            <p class="experienceposition">Electronics and Software Lead, Chassis Design</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">Currently working in a team of 3 to design and build a land vehicle to autonomously replant tree seeds in post-wildfire forests for an iDP module, EG3301R.</p>
+                        <br>
+                        <p class="experiencedescription">- Worked with CAL FIRE as a customer to gain problem insights and design specifications.</p>
+                        <p class="experiencedescription">- Use Solidworks to produce CAD model for chassis, optimizing parts for ease of manufacturing.</p>
+                        <p class="experiencedescription">- Used ArduRover and an arduino to design controls for the robot.</p>
+                        <p class="experiencedescription">- Designed and soldered power harness.</p>
+                        <p class="experiencedescription">- Prototyping using 3D printing and laser cutting.</p>
+                    </div>
+                    <div class="experiencegallery">
+                        <img onclick="custommodal('EG3301R1')" id="EG3301R1" src="EG3301R1.jpg" alt="First prototype of power harness along with controls. This is a bench test to ensure the motors function as intended." class="experiencepic">
+                    </div>
+                </div>    
+            </div>
+            <div id="AeroNUS (Project)" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("AeroNUSbkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="AeroNUS2122Logo.jpg" alt="AeroNUS 2021-2022 Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">AeroNUS</p>
+                            <p class="experiencedate">July 2021 to April 2022</p>
+                            <p class="experienceposition">Chief Engineer</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">I was the chief engineer for the AeroNUS UAV Competition Team, where we designed and built an Unmanned Aerial Vehicle (UAV) for the American Institute of Aeronautics and Astronautics (AIAA) Design, Build, Fly (DBF) Competition in 2022. We managed to achieve the highest report ranking in NUS history, at 14th place out of 110 teams. In this position, I oversaw the various the subteams and coordinated joint design efforts, and led manufacturing, scheduling, and team organization.</p>
+                        <br>
+                        <p class="experiencedescription">- Used XFLR5 and AVL to analyze airfoils, wing and empennage configurations, and determine key stability values and trim conditions.</p>
+                        <p class="experiencedescription">- Designed wings, tail, and fuselage using Solidworks, managed full CAD model for final plane.</p>
+                        <p class="experiencedescription">- Performed Solidworks static and topology FEA simulations using nonuniform force distributions to minimize the weight of our wings.</p>
+                        <p class="experiencedescription">- Wrote a Multi-Disciplinary Design Optimization (MDO) program using MATLAB to determine plane sizing for our prototype and final planes.</p>
+                        <p class="experiencedescription">- Developed python scripts to write G-Code for precise foam CNC manufacturing of lifting bodies.</p>
+                        <p class="experiencedescription">- Manufactured planes using foam hot wire CNC, carbon fiber prepreg and molding, CNC milling, laser cutting, and 3D printing, along with hand manufacturing with various glues, foams, and wood.</p>
+                        <p class="experiencedescription">- Designed and manufactured the controls circuit and wrote and implemented an Arduino program to sequentially deploy payloads.</p>
+                        <p class="experiencedescription">- Organized the team, planned the overall schedule and key deadlines, coordinated meetings, and helped resolve disputes.</p>
+                    </div>
+                    <div class="experiencegallery">
+                        <img onclick="custommodal('AeroNUS1')" id="AeroNUS1" src="AeroNUS1.jpg" alt="Using a laser cut jig to create bent stringers for our prototype fuselage. We did not use this process in our final plane because the manufacturing time was not worth the gain in aerodynamics." class="experiencepic">
+                        <img onclick="custommodal('AeroNUS2')" id="AeroNUS2" src="AeroNUS2.jpg" alt="Here is our fuselage in three parts, which was necessary to take our plane in flight-legal boxes to the US." class="experiencepic">
+                        <img onclick="custommodal('AeroNUS3')" id="AeroNUS3" src="AeroNUS3.jpg" alt="We attempted creating Carbon-Fiber landing gear. Along with that, some carbon fiber spars can be seen in the background." class="experiencepic">
+                        <img onclick="custommodal('AeroNUS4')" id="AeroNUS4" src="AeroNUS4.jpg" alt="Here is a picture of our final team in the US." class="experiencepic">
+                    </div>
+                </div>    
+            </div>
+            <div id="Invictus AI" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("InvigiloAIBkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="InvigiloLogo.jpg" alt="Invigilo AI Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">UROP with Invigilo AI</p>
+                            <p class="experiencedate">August 2021 to December 2021</p>
+                            <p class="experienceposition">Machine Learning Research Project</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">Implemented various CV models using Pytorch and YOLOv5 for helmet detection in construction sites under the guidance of startup Invigilo AI. Counted as UROPS (EG2605).</p>
+                    </div>
+                </div>    
+            </div>
+            <div id="EG2310" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("EG2310Bkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="NUSLogo.jpg" alt="NUS Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">EG2310R</p>
+                            <p class="experiencedate">January 2021 to April 2021</p>
+                            <p class="experienceposition">Mechanical Design Lead</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">EG2310 was my first NUS module where I was able to practice engineering. As a group of 5 freshman, we had to use a Turtlebot3 Burger as a base, and create a launcher capable of aiming and launching ping pong balls at an IR target in an unknown position, and program the robot to autonomously navigate and map a maze using ROS.</p>
+                        <br>
+                        <p class="experiencedescription">- Learnt and used Autodesk Inventor Pro to design a launcher that could be attached onto the robot.</p>
+                        <p class="experiencedescription">- Sized motors and mechanical structures based on stress, ping pong ball velocity, and using FEA to supplement my calculations.</p>
+                        <p class="experiencedescription">- Ensured that all designs were created with 3D printing constraints in mind.</p>
+                        <p class="experiencedescription">- Assisted with electronics and hardware programming using a Raspberry Pi for controlling the launcher.</p>
+                        <p class="experiencedescription">- Worked extensively with Raspberry Pi, Gazebo, and ROS2 for robot controls and testing.</p>
+                    </div>
+                    <div class="experiencegallery">
+                        <img onclick="custommodal('EG23101')" id="EG23101" src="EG23101.jpg" alt="Our finalized robot inside the maze, ready for launch!" class="experiencepic">
+                        <img onclick="custommodal('EG23102')" id="EG23102" src="EG23102.jpg" alt="A zoom-in on the aiming system, created with a 3D printed support and metal gears integrated into the robot." class="experiencepic">
+                        <img onclick="custommodal('EG23103')" id="EG23103" src="EG23103.jpg" alt="Here, a ping pong ball loading system had to be devised after we made our launcher because the initial version didn't work. We managed to create a rack and pinion loading system and a paper tube for holding extra balls." class="experiencepic">
+                    </div>
+                </div>    
+            </div>
+            <div id="Leadership" style="width: 100%; text-align: center; margin: 0;">
+                <p id="title" class="titleblend" style="color: white;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7vw; padding-top: 1vw; padding-bottom: 1vw;">Leadership</p>
+            </div>
+            <div id="iDPSC" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("IDPSCBkg.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="IDPSCLogo.PNG" alt="iDP Students' Club Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">iDP Students' Club</p>
+                            <p class="experiencedate">January 2021 to Present</p>
+                            <p class="experienceposition">Vice President External, formerly Head of Professional Development</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">- Influenced club direction to focus on improving network with alumni and startup founders.</p>
+                        <p class="experiencedescription">- Assisted subcommittees with logistics, external liaising, and planning for various events, such as the IDEATE 2022 ideathon, UTR Design Fest, and Summer Internship Program.</p>
+                        <p class="experiencedescription">- Directly involved in planning and logistics of iDP Carnival, attracting over 100 students, and a brand new iDP Freshman Orientation Programme.</p>
+                        <p class="experiencedescription">- Previously led a team of 5 in the Professional Development Committee to run an internship program for iDP students, having sourced over 60 internships by working with over 20 companies and various NUS parties.</p>
+                        <p class="experiencedescription">- Organized an industry talk with Apple and contacted judges and sponsors for the IDEATE 2021 ideathon and spearheaded logistics for the judging procedure with 11 judges and 150 students.</p>
+                    </div>
+                </div>    
+            </div>
+            <div id="AeroNUS (Project)" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("AeroNUSBkg2.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="AeroNUS2223Logo.png" alt="AeroNUS 2022 - 2023 Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">AeroNUS</p>
+                            <p class="experiencedate">May 2022 to Present</p>
+                            <p class="experienceposition">Mentor</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">At the beginning of my term in AeroNUS, we had very little support and training, and had to figure everything out by ourselves. Having now gained a wealth of experience, I have organised a bootcamp and structured training phase, spanning from July to October, enabling the new team to hopefully acheive higher highs than we ever did.</p>
+                        <br>
+                        <p class="experiencedescription">- Overhauled advertising and recruitment process, bringing in over 55 signups, improving on last year's 30 signups.</p>
+                        <p class="experiencedescription">- Planned and hosted the AeroNUS bootcamp, a hybrid, month-long introductory course for new students interested in joining the team for over 40 participants.</p>
+                        <p class="experiencedescription">- Mentored the new team of 20 in creating their first plane.</p>
+                    </div>
+                    <div class="experiencegallery">
+                        <img onclick="custommodal('AeroNUS5')" id="AeroNUS5" src="AeroNUS5.jpg" alt="Performing outreach at Science Center to build community interest in aviation." class="experiencepic">
+                        <img onclick="custommodal('AeroNUS6')" id="AeroNUS6" src="AeroNUS6.jpg" alt="Analyzing plane crash and teaching new team about stress concentrations and building for failure." class="experiencepic">
+                        <img onclick="custommodal('AeroNUS7')" id="AeroNUS7" src="AeroNUS7.jpg" alt="Our first workshop!" class="experiencepic">
+                    </div>
+                </div>    
+            </div>
+            <div id="Aviation Club" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.7)), url("NUSAC1.jpg");'>
+                <div class="experiencecolumn">
+                    <div class="experiencetop">
+                        <img src="NUSACLogo.png" alt="NUS Aviation Club Logo" class="experiencelogo"/>
+                        <div class="experienceheader">
+                            <p class="experiencename">Aviation Club</p>
+                            <p class="experiencedate">July 2022 to Present</p>
+                            <p class="experienceposition">Projects Director</p>
+                        </div>
+                    </div>
+                    <div class="experiencebottom">
+                        <p class="experiencedescription">Hosted drone flying and aeromodelling sessions for over 30 students at our first Aerocamp.</p>
+                        <p class="experiencedescription">Assisted in forming our founding internal committee of over 20 members, assigning roles to spread workload, and setting direction.</p>
+                    </div>
+                </div>    
+            </div>
+            <div id="Skills" style="width: 100%; text-align: center; margin: 0;">
+                <p id="title" class="titleblend" style="color: white;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; font-size: 7vw; padding-top: 1vw; padding-bottom: 1vw;">Skills</p>
+            </div>
+            <div class="skilldiv">
+                <table class="skilltable">
+                    <tr class="row row2">
+                        <td class="category categoryheader">Mechanical Design</td>
+                        <td class="skill">Design Thinking</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Sizing and Optimization</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Design for Manufacturing</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">CAD</td>
+                        <td class="skill">Solidworks</td>
+                        <td class="level">CSWP Certified</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Autodesk Inventor and Fusion 360</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">CFD</td>
+                        <td class="skill">ANSYS Fluent</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Manufacturing</td>
+                        <td class="skill">CNC Milling</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Laser Cutting</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Soldering</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Wood</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">3D Printing (FDM)</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Traditional Manufacturing (Metal)</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Carbon Fiber</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Aeronautics</td>
+                        <td class="skill">X-Foil, XFLR5, AVL</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Wing and Tail Design</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Aircraft Sizing</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Unmanned Aerial Systems</td>
+                        <td class="skill">Ardupilot Software and Scripting</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Mission Planner</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">SITL (Software-in-the-Loop) Simulations</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Communication Systems</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Electronics</td>
+                        <td class="skill">Circuit Design</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Controls</td>
+                        <td class="skill">Arduino</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Raspberry Pi</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Jetson</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">PLC Programming</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Software</td>
+                        <td class="skill">Matlab</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Python</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Maching Learning with Python</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">ROS</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Java</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">C++</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Lua</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Web Design</td>
+                        <td class="skill">JS</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">HTML</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">CSS</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Wix. Website Builder</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">React</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Search Engine Optimization</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Office Productivity</td>
+                        <td class="skill">Word, Powerpoint, & Excel</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Creative Suite</td>
+                        <td class="skill">Canva</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Adobe Photoshop and GIMP</td>
+                        <td class="level">Intermediate</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">3DS Max</td>
+                        <td class="level">Basic</td>
+                    </tr>
+                    <tr class="row row2">
+                        <td class="category categoryheader">Soft Skills</td>
+                        <td class="skill">Leadership & Collaboration</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Project Planning and Event Management</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                    <tr class="row">
+                        <td class="category"></td>
+                        <td class="skill">Public Speaking and Emceeing</td>
+                        <td class="level">Proficient</td>
+                    </tr>
+                </table>
             </div>   
-        </div>  
+            <div class="footer">
+                <p id="subtitle">Kaustav Mukherjee</p>
+                <div id="iconbox" style="justify-content: center; align-items: center;">
+                    <a href="https://www.linkedin.com/in/kaustavmu/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-linkedin" viewBox="0 0 16 16">
+                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/kaustavmu">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                    </a>
+                    <a href="mailto:kaustav.mukherjee2020@gmail.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>    
+        </div>
     </body>
 </html>
