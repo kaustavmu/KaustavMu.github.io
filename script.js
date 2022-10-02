@@ -14,10 +14,19 @@ function closemodal() {
 }
 
 function Navbar(a){
-    var pages = ["home", "aboutme", "aeronus", "eg3301r", "eg2310", "otherprojects"];
-    var pageslength = pages.length;
-    for (var i = 0; i < pageslength; i++) {
-        console.log(i);
+    // var pages = ["home", "aboutme", "aeronus", "eg3301r", "eg2310", "otherprojects"];
+    // var pageslength = pages.length;
+    // var pagedivs = ["homediv", "aboutmediv", "aeronusdiv", "eg3301rdiv", "eg2310div", "otherprojectsdiv"]
+    // for (var i = 0; i < pagedivs.length; i++) {
+    //     if (document.getElementById(pagedivs[i]).style.display == "block") {
+    //         document.getElementById(pagedivs[i]).style.display = "none"
+    //         break
+    //     }
+    // }
+    // document.getElementById(pagedivs[a]).style.display = "block"
+    var pages = ["home", "about", "education", "work", "projects", "leadership", "skills"]
+    var pixels = [10, 20, 30, 40, 50, 60, 70]
+    for (var i = 0; i < pages.length; i++) {
         if (i == a) {
             document.getElementById(pages[i]).classList.add('blend2');
         }
@@ -25,12 +34,5 @@ function Navbar(a){
             document.getElementById(pages[i]).classList.remove('blend2');
         }
     }
-    var pagedivs = ["homediv", "aboutmediv", "aeronusdiv", "eg3301rdiv", "eg2310div", "otherprojectsdiv"]
-    for (var i = 0; i < pagedivs.length; i++) {
-        if (document.getElementById(pagedivs[i]).style.display == "block") {
-            document.getElementById(pagedivs[i]).style.display = "none"
-            break
-        }
-    }
-    document.getElementById(pagedivs[a]).style.display = "block"
+    window.scrollTo(0, 2000);
 }
