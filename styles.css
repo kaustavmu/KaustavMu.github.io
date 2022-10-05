@@ -27,7 +27,7 @@ html {
 #navbar {
     height: 3vw;
     width: 100%;
-    z-index: 2;
+    z-index: 1;
     background-color: black;
     margin: 0 auto;
     padding: 0pt;
@@ -507,7 +507,7 @@ html {
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    z-index: 2; /* Sit on top */
     padding-top: 100px; /* Location of the box */
     left: 0;
     top: 0;
@@ -552,6 +552,7 @@ html {
 /* The Close Button */
 .close {
     position: absolute;
+    z-index: auto;
     top: 15px;
     right: 35px;
     color: #f1f1f1;
