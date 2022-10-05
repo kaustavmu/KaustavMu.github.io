@@ -56,9 +56,10 @@
     border: none;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    font-size: 20pt;
-    font-family: monospace;
+    font-size: 7vw;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin: 0;
+    margin-bottom: 1vw;
     padding-top: 18px;
     padding-bottom: 18px;
     padding-left: 30px;
@@ -93,6 +94,21 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.sectiontitle {
+    font-size: 7vw;
+    border: none;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    mix-blend-mode: multiply;
+    flex: 0 0 auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.3s;
+}
+
 /* Page Divs */
 
 .page {
@@ -122,7 +138,7 @@
     flex-wrap: wrap;
 }
 
-#titleboxcolumn {
+.titleboxcolumn {
     flex: 1 0 auto;
     min-height: 100vh;
     width: 40%;
@@ -138,6 +154,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.abouttext {
+    font-size: 1.25vw;
 }
 
 #profilepic{
@@ -385,7 +405,7 @@
     margin:  0pt;
 }
 
-#subtitle {
+.subtitle {
     color: rgb(63 63 63);
     font-family: monospace;
     font-size: 1.5vw;
@@ -588,7 +608,23 @@
     }
 }
 
+.mobileon {
+    display: none;
+}
+
+.mobileoff {
+    display: flex;
+}
+
 @media screen and (max-width: 1000px) {
+    .mobileon {
+        display: flex;
+    }
+
+    .mobileoff {
+        display: none;
+    }
+
     .page {
         /* margin-top: 2vh; */
         /* margin-bottom: 2vh; */
@@ -600,19 +636,37 @@
         flex-wrap: nowrap;
     }
 
-    #titleboxcolumn {
+    .titleboxcolumn {
       width:100%;
       margin-top: 0px;
       margin-bottom: 0px;
       flex: 0 0 auto;
     }
 
+    .mobilecolumn {
+        min-height: 0;
+        height: 0;
+    }
+
     #title {
         font-size: 17vw;
     }
     
-    #subtitle {
+    .subtitle {
         font-size: 4vw;
+    }
+
+    .titleblend {
+        font-size: 17vw;
+        margin-bottom: 4vw;
+    }
+
+    .abouttext {
+        font-size: 4vw;
+    }
+
+    .sectiontitle {
+        font-size: 17vw;
     }
 
     #iconbox {
@@ -621,22 +675,38 @@
         gap: 4vw;
     }
     
+    .resume {
+        font-size: 3vw;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+    
+    .resumebutton {
+        border-width: 0.5vw;
+        height: 7vw;
+    }
+    
     .bi{
         width: 8vw;
         height: 8vw;
     }
 
-    #aboutpic{
-        max-width: 80%;
-    }
-
     #schoolbox {
+        display: flex;
         flex-direction: column;
+        align-items: stretch;
     }
     
     #school {
         width: 100%;
-        padding: 8vw;
+        padding: 0;
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+        margin: 0;
+    }
+
+    #schooltext {
+        width: 80%;
     }
     
     #schoollogo {
@@ -645,28 +715,116 @@
     }
     
     #schoolname {
-        color: white;
-        font-size: 3vw;
-        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-        margin-bottom: 0;
+        font-size: 6vw;
     }
     
     #schoolyears {
-        color: rgb(255,205,0);
-        font-size: 2vw;
-        font-family: monospace;
-        margin-top: 0;
+        font-size: 4vw;
     }
     
     #schooldegree {
-        color: white;
-        font-size: 2vw;
-        font-family: monospace;
+        font-size: 3vw;
     }
     
     #schoolnotes {
+        font-size: 3vw;
+    }
+
+    .experiencediv {
+        padding-top: 5vw;
+        padding-bottom: 5vw;
+    }
+    
+    .experiencecolumn {
+        width: 80%;
+    }
+    
+    .experiencetop {
+
+    }
+    
+    .experiencebottom {
+        margin-left: 1.25vw;
+    }
+    
+    .experiencegallery {
+        
+        padding: 1vw;
+        gap: 2vw;
+    }
+    
+    .experiencelogo {
+        height: 16vw;
+        border-radius: 2vw;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        margin: 2vw;
+    }
+    
+    .experiencename {
+        color: black;
+        font-size: 6vw;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    
+    .experiencedate {
+        color: rgb(63 63 63);
+        font-size: 3vw;
+        font-family: monospace;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    
+    .experienceposition {
+        color: black;
+        font-size: 3vw;
+        font-family: monospace;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    
+    .experiencedescription {
+        color: black;
+        font-size: 3vw;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin: 0.4vw;
+    }
+    
+    .experiencepic {
+        width: 20vw;
+        height: 15vw;
+        object-fit: cover;
+    }
+    
+    .experiencepic:hover {
+        opacity: 0.7;
+    }
+
+    .category {
         color: white;
-        font-size: 1vw;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 2.5vw;
+        text-decoration: underline;
+    }
+    
+    .categoryheader {
+        padding-top: 2vw;
+    }
+    
+    .skill {
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 2vw;
+        vertical-align: bottom;
+        padding-left: 4vw;
+        padding-right: 4vw;
+    }
+    
+    .level {
+        color: white;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-size: 2vw;
+        vertical-align: bottom;
     }
 }
