@@ -18,11 +18,17 @@
     overflow: auto;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Navbar */
 
 #navbar {
-    height: 50pt;
+    height: 3vw;
     width: 100%;
+    z-index: 2;
+    background-color: black;
     margin: 0 auto;
     padding: 0pt;
     flex: 0 0 auto;
@@ -35,17 +41,28 @@
     top: 0vh;
 }
 
+.navitem {
+    color: rgb(255, 255, 255);
+    font-size: 1.25vw;
+    font-family: monospace;
+    margin: 0;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+}
+
 .blend {
     border: none;
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    font-size: 20pt;
+    font-size: 1.5vw;
     font-family: monospace;
     margin: 0;
-    padding-top: 18px;
-    padding-bottom: 18px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
     mix-blend-mode: multiply;
     flex: 0 0 auto;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -72,10 +89,12 @@
 
 .blend:hover {
     mix-blend-mode: unset;
+    color: rgba(255,205,0,1);
 }
 
 .blend2 {
     mix-blend-mode: unset;
+    color: rgba(255,205,0,1);
 }
 
 #navleft {
@@ -121,6 +140,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    scroll-behavior: smooth;
 }
 
 /* Title Page */
@@ -826,5 +846,17 @@
         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         font-size: 2vw;
         vertical-align: bottom;
+    }
+
+    #navbar {
+        height: 6vw;
+    }
+    
+    .navitem {
+        font-size: 3vw;
+        padding-top: 1vw;
+        padding-bottom: 1vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
     }
 }
