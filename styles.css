@@ -664,6 +664,11 @@ html {
       flex: 0 0 auto;
     }
 
+    #titleboxsubcolumn {
+        margin-top: 2vw;
+        margin-bottom: 2vw;
+    } 
+
     .mobilecolumn {
         min-height: 0;
         height: 0;
