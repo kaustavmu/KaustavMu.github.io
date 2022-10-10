@@ -774,7 +774,8 @@ html {
     }
     
     .experiencegallery {
-        
+        flex-direction: row;
+        flex-wrap: wrap;
         padding: 1vw;
         gap: 2vw;
     }
