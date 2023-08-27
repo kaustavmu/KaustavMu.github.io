@@ -486,18 +486,6 @@ html {
     font-size: 4vw;
 }
 
-.skilltable {
-    
-}
-
-.row {
-
-}
-
-.row2 {
-
-}
-
 .category {
     color: white;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -791,15 +779,6 @@ html {
     content: "";
     cursor: default;
 }
-  
-  /* Visual styles for your dropdown: */
-.dropdown .dropdown-trigger {
-    /* your look and feel here */
-}
-  
-.dropdown .dropdown-content {
-    /* your look and feel here */
-}
 
 @media screen and (max-width: 1000px) {
     .mobileon {
@@ -808,11 +787,6 @@ html {
 
     .mobileoff {
         display: none;
-    }
-
-    .page {
-        /* margin-top: 2vh; */
-        /* margin-bottom: 2vh; */
     }
 
     #titlebox {
@@ -936,10 +910,6 @@ html {
     
     .experiencecolumn {
         width: 80%;
-    }
-    
-    .experiencetop {
-
     }
     
     .experiencebottom {
