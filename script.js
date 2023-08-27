@@ -14,16 +14,6 @@ function closemodal() {
 }
 
 function Navbar(a){
-    // var pages = ["home", "aboutme", "aeronus", "eg3301r", "eg2310", "otherprojects"];
-    // var pageslength = pages.length;
-    // var pagedivs = ["homediv", "aboutmediv", "aeronusdiv", "eg3301rdiv", "eg2310div", "otherprojectsdiv"]
-    // for (var i = 0; i < pagedivs.length; i++) {
-    //     if (document.getElementById(pagedivs[i]).style.display == "block") {
-    //         document.getElementById(pagedivs[i]).style.display = "none"
-    //         break
-    //     }
-    // }
-    // document.getElementById(pagedivs[a]).style.display = "block"
     var pages = ["home", "about", "education", "work", "projects", "leadership", "skills"]
     var pixels = [10, 20, 30, 40, 50, 60, 70]
     for (var i = 0; i < pages.length; i++) {
@@ -35,4 +25,19 @@ function Navbar(a){
         }
     }
     window.scrollTo(0, 2000);
+}
+
+var coll = document.getElementsByClassName("experiencediv");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        // this.classList.toggle("active");
+        var content = this.lastChild;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    });
 }
