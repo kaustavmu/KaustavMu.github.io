@@ -1,2 +1,2 @@
 # KaustavMu.github.io
-My personal website!
+An online resume made for NUS Overseas College in 2022. 
