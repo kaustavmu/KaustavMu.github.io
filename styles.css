@@ -289,7 +289,7 @@ html {
     margin: 0;
 }
 
-/* Experience */
+/*  */
 
 .experiencediv {
     width: 100%;
@@ -357,6 +357,18 @@ html {
     font-family: Impacto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-bottom: 0;
     margin-top: 0;
+}
+
+.experiencenamelink {
+    color: black;
+    font-size: 3vw;
+    font-family: Impacto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.experiencenamelink:hover {
+    opacity: 50%;
 }
 
 .experiencedate {
