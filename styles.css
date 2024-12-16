@@ -365,12 +365,13 @@ html {
     font-family: Impacto, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     margin-bottom: 0;
     margin-top: 0;
-    text-decoration: none;
-    text-decoration-color: black;
+    text-decoration: underline;
+    text-decoration-color: blue;
 }
 
 .experiencenamelink:hover {
     opacity: 50%;
+    text-decoration-color: red;
 }
 
 /* .experiencenamelink:link
