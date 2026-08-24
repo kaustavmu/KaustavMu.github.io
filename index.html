@@ -4,18 +4,25 @@
         <link rel="stylesheet" href="styles.css"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="google-site-verification" content="1BJeuKehY5ySdcdVMF9swLXb__oF0cY7x1bqw2Pc9Ks" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
         <script type="text/javascript" src="script.js"></script>
         <link rel="icon" href="KMFavicon.png">
     </head>
     <body style="scroll-behavior: smooth;">
         <div id="bkg" style="scroll-behavior: smooth;">
             <div id="navbar">
-                <a class="navitem" href="#homediv">Home</a>
-                <a class="navitem" href="#projects">Projects</a>
-                <a class="navitem" href="#workexperience">Work</a>
-                <a class="navitem" href="#education">Education</a>
-                <a class="navitem" href="#Leadership">Leadership</a>
-                <a class="navitem" href="#Skills">Skills</a>
+                <div id="nav-links">
+                    <a class="navitem" href="#homediv">Home</a>
+                    <a class="navitem" href="#about">About</a>
+                    <a class="navitem" href="#publications">Publications</a>
+                    <a class="navitem" href="#projects">Projects</a>
+                    <a class="navitem" href="#education">Education</a>
+                    <a class="navitem" href="#work">Work</a>
+                    <a class="navitem" href="#skills">Skills</a>
+                </div>
+                <button id="mobile-menu-toggle" class="mobile-menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">☰</button>
                 <!-- <div id="navleft"></div>
                 <button id="home" class="blend blend2" onclick="Navbar(0)">Home</button>
                 <button id="about" class="blend" onclick="Navbar(1)">About</button>
@@ -27,7 +34,7 @@
                 <div id="navright"></div> -->
             </div>
             <!-- The Modal -->
-            <div id="myModal" class="modal">
+            <div id="myModal" class="modal" onclick="if (event.target === this) closemodal()">
 
                 <!-- The Close Button -->
                 <span onclick="closemodal()" id="closebutton" class="close">&times;</span>
@@ -42,8 +49,10 @@
                 <div id="titlebox" style="overflow: clip;">
                     <div id="titleboxcolumn" class="titleboxcolumn">
                         <div class="titleboxsubcolumn" style="min-height: calc(100vh - 3vw)">
-                            <p id="title" class="fromleft">Kaustav</p>
-                            <p id="title" class="fromleft" style="animation-delay: 0.25s">Mukherjee</p>
+                            <h1 id="title">
+                                <span class="fromleft">Kaustav</span>
+                                <span class="fromleft" style="animation-delay: 0.25s">Mukherjee</span>
+                            </h1>
                             <p class="subtitle fade-in" style="animation-delay: 1s">Computer Vision and Machine Learning</p>
                             <div id="iconbox" class="fade-in" style="animation-delay: 1s">
                                 <a href="https://www.linkedin.com/in/kaustavmu/">
@@ -61,554 +70,240 @@
                                         <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
                                     </svg>
                                 </a>
-                                <a href="KAUSTAV MUKHERJEE Resume (17-Dec-2024).pdf" download>
-                                    <div class="resumebutton">
-                                        <p class="resume" style="text-decoration: none;">RESUME</p>
-                                    </div>
-                                </a>
+                                <div class="resumebutton">
+                                    <a class="resume-link" href="KAUSTAV MUKHERJEE Resume.pdf" target="_blank" rel="noopener noreferrer">
+                                        <p class="resume">RESUME</p>
+                                    </a>
+                                </div>
                             </div>
                             <img src="ProfilePicture2.jpg" alt="My profile picture." id="profilepic" class="fade-in mobileon" style="animation-delay: 1s"/>
                         </div>
-                        <div class="titleboxsubcolumn titleboxsubcolumn2" style="width: 80%;">
-                            <p class="titleblend fromleft">Hi!</p>
-                            <br>
-                            <p class = "subtitle abouttext">I'm Kaustav, a computer vision engineer with 2 years of experience, currently pursuing a Master of Science in Computer Vision (MSCV) at Carnegie Mellon University. To see my work, projects, and other experiences, explore below.</p>
-                            <!-- <br> -->
-                            <!-- <p class = "subtitle abouttext">Explore below!</p> -->
-                            <br>
-                        </div>
-                        <!-- <p id="bodytext"><span class="white-highlight">Hi! I'm Kaustav, a 3rd year student at NUS studying Mechanical Engineering and Innovation and Design. Through my internships and projects, I have developed a deep skillset in mechanical design, aviation, and unmanned systems. View some of my portfolio below!</span></p>                         -->
                     </div>
-                    <div id="titleboxcolumn" style="position: sticky; bottom: 0vh; min-height: calc(100vh - 3vw)" class="titleboxcolumn mobileoff mobilecolumn">
+                    <div id="titleboxcolumn" style="min-height: calc(100vh - 3vw)" class="titleboxcolumn mobileoff mobilecolumn">
                         <img src="ProfilePicture2.jpg" alt="My profile picture." id="profilepic" class="fade-in mobileoff" style="animation-delay: 1s"/>
                     </div>
                 </div>
+                <a class="scroll-indicator" href="#about" aria-label="Scroll to explore">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M5 9l7 7 7-7" />
+                    </svg>
+                </a>
             </div>
-            <div id="projects" class="navable" style="width: 100%; text-align: center;">
-                <p class="sectiontitle">Projects</p>
-            </div>
-            <div id="AvatarsFTW" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("AvatarBkg.png");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="CMULogo.png" alt="CMU Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <a href="https://kaustavmukherjee.com/AvatarsFTWPage" class="experiencenamelink">AvatarsFTW</a>
-                            <p class="experiencedate">October 2024 to Present </p>
-                            <p class="experienceposition">3D Human Avatars From the Wild</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Developed pipeline to improve performance of SOTA 3D Human Avatar Generation pipelines on in-the-wild images.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Created an inpainting pipeline consisting of segmentation, keypoint estimation, diffusion, and GAN inversion to remove occlusions and generate missing human-body areas.</p>
-                        <p class="experiencedescription">&#x25B8; Developed novel method for human keypoint estimation to condition diffusion models for human image generation.</p>
-                        <p class="experiencedescription">&#x25B8; Integrated PyMAF-X and incorporated additional losses to improve SMPL-X regression and improve body fit for highly dynamic poses.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('AvatarsFTW1')" id="AvatarsFTW1" src="AvatarsFTW1.jpg" alt="Overview diagram of AvatarsFTW." class="experiencepic">
-                        <img onclick="custommodal('AvatarsFTW2')" id="AvatarsFTW2" src="AvatarsFTW2.png" alt="Results showing improved normal maps due to the inpainting pipeline." class="experiencepic">
-                        <img onclick="custommodal('AvatarsFTW3')" id="AvatarsFTW3" src="AvatarsFTW3.png" alt="Results showing improved SMPL-X fit due to the new regression and iterative fitting process." class="experiencepic">
-                    </div>
-                </div>    
-            </div>
-            <div id="Neural Plane Optimization" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("NPOBkg.png");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="AeroNUS2122Logo.jpg" alt="Neural Plane Optimizations Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">Neural Plane Optimization</p>
-                            <p class="experiencedate">April 2024 to May 2024</p>
-                            <p class="experienceposition">Faster UAV Design with Machine Learning</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Used neural networks and non-linear optimization to determine unmanned aerial vehicle design parameters.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Utilized a neural network and particle swarm optimization (PSO) to speed up my AeroNUS 2022 aeroplane optimization program over 100 times.</p>
-                        <p class="experiencedescription">&#x25B8; Increased design space by over 1000 times by training a DNN with Keras for 2D to 3D aerodynamic estimation.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('NPO1')" id="NPO1" src="NPO1.jpg" alt="Optimized airfoil design for the given flight mission requirements." class="experiencepic">
-                        <img onclick="custommodal('NPO2')" id="NPO2" src="NPO2.jpg" alt="Particle swarm optimization mean and best values, showing quick convergence in a large design space." class="experiencepic">
-                    </div>
-                </div>    
-            </div>
-            <div id="vidi" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("vidiBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="vidiLogo.jpg" alt="Berkeley Hackathons Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">vidi</p>
-                            <p class="experiencedate">June 2023</p>
-                            <p class="experienceposition">for UC Berkeley AI Hackathon 2023</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Designed a smart, AI-powered glasses to improve accessibility for individuals with visual impairment in a team of 2.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Designed glasses in a team of 2 to aid blind individuals with a Raspberry Pi, speaker, microphone, and camera.</p>
-                        <p class="experiencedescription">&#x25B8; Wrote software to simultaneously process sensor inputs and outputs using YOLOv8, GPT-4, and multiprocessing.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('vidi1')" id="vidi1" src="vidi1.jpg" alt="First time assembling all the electronics together." class="experiencepic">
-                        <img onclick="custommodal('vidi2')" id="vidi2" src="vidi2.jpg" alt="Struggling to fit all the wires in such a small box!" class="experiencepic">
-                        <img onclick="custommodal('vidi3')" id="vidi3" src="vidi3.jpg" alt="Final product with everything assembled." class="experiencepic">
-                    </div>
-                </div>    
-            </div>
-            <div id="EG3301R" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("EG3301RBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="NUSLogo.jpg" alt="NUS Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">EG3301R</p>
-                            <p class="experiencedate">January 2022 to November 2022</p>
-                            <p class="experienceposition">Reforestation Robot</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Worked in a team of 3 to design and build a land vehicle to autonomously replant tree seeds in post-wildfire forests for an iDP module, EG3301R.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Worked with CAL FIRE as a customer to gain problem insights and design specifications.</p>
-                        <p class="experiencedescription">&#x25B8; Used Solidworks to produce CAD model for chassis, optimizing parts for ease of manufacturing.</p>
-                        <p class="experiencedescription">&#x25B8; Used ArduRover and an arduino to design controls for the robot.</p>
-                        <p class="experiencedescription">&#x25B8; Designed and soldered power harness.</p>
-                        <p class="experiencedescription">&#x25B8; Prototyping using 3D printing and laser cutting.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('EG3301R1')" id="EG3301R1" src="EG3301R1.jpg" alt="First prototype of power harness along with controls. This is a bench test to ensure the motors function as intended." class="experiencepic">
-                        <img onclick="custommodal('EG3301R2')" id="EG3301R2" src="EG3301R2.jpg" alt="The first arm blade manufactured and mounted, with sufficient electronics for testing." class="experiencepic">
-                    </div>
-                </div>    
-            </div>
-            <div id="AeroNUS (Project)" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("AeroNUSBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="AeroNUS2122Logo.jpg" alt="AeroNUS 2021-2022 Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">AeroNUS</p>
-                            <p class="experiencedate">July 2021 to April 2022</p>
-                            <p class="experienceposition">Chief Engineer</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">I was the chief engineer for the AeroNUS UAV Competition Team, where we designed and built an Unmanned Aerial Vehicle (UAV) for the American Institute of Aeronautics and Astronautics (AIAA) Design, Build, Fly (DBF) Competition in 2022. We managed to achieve the highest report ranking in NUS history, at 14th place out of 110 teams. In this position, I oversaw the various the subteams and coordinated joint design efforts, and led manufacturing, scheduling, and team organization.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Used XFLR5 and AVL to analyze airfoils, wing and empennage configurations, and determine key stability values and trim conditions.</p>
-                        <p class="experiencedescription">&#x25B8; Designed wings, tail, and fuselage using Solidworks, managed full CAD model for final plane.</p>
-                        <p class="experiencedescription">&#x25B8; Performed Solidworks static and topology FEA simulations using nonuniform force distributions to minimize the weight of our wings.</p>
-                        <p class="experiencedescription">&#x25B8; Wrote a Multi-Disciplinary Design Optimization (MDO) program using MATLAB to determine plane sizing for our prototype and final planes.</p>
-                        <p class="experiencedescription">&#x25B8; Developed python scripts to write G-Code for precise foam CNC manufacturing of lifting bodies.</p>
-                        <p class="experiencedescription">&#x25B8; Manufactured planes using foam hot wire CNC, carbon fiber prepreg and molding, CNC milling, laser cutting, and 3D printing, along with hand manufacturing with various glues, foams, and wood.</p>
-                        <p class="experiencedescription">&#x25B8; Designed and manufactured the controls circuit and wrote and implemented an Arduino program to sequentially deploy payloads.</p>
-                        <p class="experiencedescription">&#x25B8; Organized the team, planned the overall schedule and key deadlines, coordinated meetings, and helped resolve disputes.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('AeroNUS1')" id="AeroNUS1" src="AeroNUS1.jpg" alt="Using a laser cut jig to create bent stringers for our prototype fuselage. We did not use this process in our final plane because the manufacturing time was not worth the gain in aerodynamics." class="experiencepic">
-                        <img onclick="custommodal('AeroNUS2')" id="AeroNUS2" src="AeroNUS2.jpg" alt="Here is our fuselage in three parts, which was necessary to take our plane in flight-legal boxes to the US." class="experiencepic">
-                        <img onclick="custommodal('AeroNUS3')" id="AeroNUS3" src="AeroNUS3.jpg" alt="We attempted creating Carbon-Fiber landing gear. Along with that, some carbon fiber spars can be seen in the background." class="experiencepic">
-                        <img onclick="custommodal('AeroNUS4')" id="AeroNUS4" src="AeroNUS4.jpg" alt="Here is a picture of our final team in the US." class="experiencepic">
-                    </div>
-                </div>    
-            </div>
-            <div id="Invictus AI" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("InvigiloAIBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="InvigiloLogo.jpg" alt="Invigilo AI Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">PPE Detection with Invigilo AI</p>
-                            <p class="experiencedate">August 2021 to December 2021</p>
-                            <p class="experienceposition">Machine Learning Research Project</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Implemented various CV models using Pytorch and YOLOv5 for helmet detection in construction sites under the guidance of startup Invigilo AI. Counted as UROPS (EG2605).</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">Languages: Python</p>
-                        <p class="experiencedescription">Packages: Pytorch, OpenCV</p>
-                        <p class="experiencedescription">&#x25B8; Worked with staff from Invigilo AI to find students interested in the project.</p>
-                        <p class="experiencedescription">&#x25B8; Used OpenCV to test the effectiveness of various image pre-processing techniques for CNNs.</p>
-                    </div>
-                </div>    
-            </div>
-            <!-- <div id="EG2310" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("EG2310Bkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="NUSLogo.jpg" alt="NUS Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">EG2310R</p>
-                            <p class="experiencedate">January 2021 to April 2021</p>
-                            <p class="experienceposition">Mechanical Design Lead</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">EG2310 was my first NUS module where I was able to practice engineering. As a group of 5 freshmen, we had to use a Turtlebot3 Burger as a base, and create a launcher capable of aiming and launching ping pong balls at an IR target in an unknown position, and program the robot to autonomously navigate and map a maze using ROS.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Learnt and used Autodesk Inventor Pro to design a launcher that could be attached onto the robot.</p>
-                        <p class="experiencedescription">&#x25B8; Sized motors and mechanical structures based on stress, ping pong ball velocity, and using FEA to supplement my calculations.</p>
-                        <p class="experiencedescription">&#x25B8; Ensured that all designs were created with 3D printing constraints in mind.</p>
-                        <p class="experiencedescription">&#x25B8; Assisted with electronics and hardware programming using a Raspberry Pi for controlling the launcher.</p>
-                        <p class="experiencedescription">&#x25B8; Worked extensively with Raspberry Pi, Gazebo, and ROS2 for robot controls and testing.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('EG23101')" id="EG23101" src="EG23101.jpg" alt="Our finalized robot inside the maze, ready for launch!" class="experiencepic">
-                        <img onclick="custommodal('EG23102')" id="EG23102" src="EG23102.jpg" alt="A zoom-in on the aiming system, created with a 3D printed support and metal gears integrated into the robot." class="experiencepic">
-                        <img onclick="custommodal('EG23103')" id="EG23103" src="EG23103.jpg" alt="Here, a ping pong ball loading system had to be devised after we made our launcher because the initial version didn't work. We managed to create a rack and pinion loading system and a paper tube for holding extra balls." class="experiencepic">
-                    </div>
-                </div>    
-            </div> -->
-            <div id="workexperience" class="navable" style="width: 100%; text-align: center;">
-                <p class = "sectiontitle">Work</p>
-            </div>
-            <div id="Kaliber Labs" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("Knee\ MRI\ copy.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="KaliberLogo.jpg" alt="Kaliber Labs Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">Kaliber Labs</p>
-                            <p class="experiencedate">January 2023 to July 2024</p>
-                            <p class="experienceposition">Software Engineering Intern | AI Researcher</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">At Kaliber Labs, I spent one and half years as a part of the AI research team, working with image generation and classification, large language models, and 2D and 3D computer vision.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">Languages: Python, C, C++, Bash</p>
-                        <p class="experiencedescription">Packages: Tensorflow, Keras, PyTorch, OpenCV, Nerfstudio, React, NextJS, Flask, AWS</p>
-                        <p class="experiencedescription">&#x25B8; Fine-tuned Llama-3-8B on surgical data, achieving 84% of GPT-4o’s performance for 2% of the operational cost.</p>
-                        <p class="experiencedescription">&#x25B8; Accelerated convergence of camera pose estimation algorithm by 10 times with particle swarm optimization (PSO).</p>
-                        <p class="experiencedescription">&#x25B8; Developed intra-operative camera registration algorithm taking under 10 seconds utilizing neural radiance fields.</p>
-                        <p class="experiencedescription">&#x25B8; Implemented methods for digital linear and geodesic measurements between points with above 90% accuracy.</p>
-                        <p class="experiencedescription">&#x25B8; Spearheaded development and prompt engineering for a new multi-modal patient chat-bot- combining surgical
-                            image model outputs, RAG with patient data, and LLMs- with Flask, NextJS, AWS, and Langchain.</p>
-                        <p class="experiencedescription">&#x25B8; Fine-tuned stable diffusion to generate synthetic training data, expanding surgical tool datasets by up to 5 times.</p>
-                        <p class="experiencedescription">&#x25B8; Employed synthetic data generation and augmentation to train multiple image classifiers to above 97% accuracy.</p>
-                        <p class="experiencedescription">&#x25B8; Trained pix2pix for modality conversion and added interpolation pipeline to multiply MRI dataset size by 10 times.</p>
-                    </div>
-                </div>    
-            </div>
-            <div id="F-Drones" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("FDronesBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="FDronesLogo.png" alt="F-Drones Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">F-Drones</p>
-                            <p class="experiencedate">May 2022 to September 2022</p>
-                            <p class="experienceposition"> Unmanned Aerial Systems Engineering Intern</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">At F-Drones, I primarily focused on communication systems and testing and development of autopilot software.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Created Lua scripts and modified Ardupilot code for additional battery and EKF functionality.</p>
-                        <p class="experiencedescription">&#x25B8; Setup SITL (Simulation-in-the-Loop), defined key operational SOP, and used it for testing geofences, autopilot bugs, failsafes, and scripts.</p>
-                        <p class="experiencedescription">&#x25B8; Used 3DS Max and Solidworks to create SITL models of our aircraft.</p>
-                        <p class="experiencedescription">&#x25B8; Researched and tested analog, digital, and 4G communications and setup 4G modules currently used for deliveries. Collaborated with partner companies and led colleagues to perform tests.</p>
-                        <p class="experiencedescription">&#x25B8; Created mapping tool with Google Maps API to track network strength for various 4G providers across operational areas in Singapore.</p>
-                    </div>
-                </div>    
-            </div>
-            <div id="SciFie Robotics" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("SciFieBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="SciFieLogo.jpg" alt="SciFie Robotics Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">SciFie Robotics</p>
-                            <p class="experiencedate">March 2021 to July 2021</p>
-                            <p class="experienceposition"> Robotics Intern</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Conducted R&D, prototyping, and design for a magnetically-mounted robot for surface preparation, paint application, and NDT of large metal structures with a team of 6.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Developed engineering sizing spreadsheets based on specifications of robot modules.</p>
-                        <p class="experiencedescription">&#x25B8; Designed and modelled a magnetic mounting bracket, NDT mounting and couplant delivery assembly, and hydroblasting arm capable of sustaining 10’000 PSI water pressure using Solidworks.</p>
-                        <p class="experiencedescription">&#x25B8; Created engineering drawings in Solidworks and performed GD&T.</p>
-                        <p class="experiencedescription">&#x25B8; Collaborated with various manufacturers and suppliers to create and procure components.</p>
-                        <p class="experiencedescription">&#x25B8; Improved a WAGO PLC control system and interface for movement and controls of the robot arm.</p>
-                        <p class="experiencedescription">&#x25B8; Wrote first draft of a business plan and designed a website with Wix.</p>
-                    </div>
-                </div>    
-            </div>
-            <div id="education" class="navable" style="width: 100%; text-align: center;">
-                <p class = "sectiontitle">Education</p>
-            </div>
-            <div id="educationdiv" class="page" style="display: block;">
-                <div id="schoolbox">
-                    <div id="school" style='background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("CMUCampus.jpg"); background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("CISCampus.jpg"); background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("CMUCampus.jpg");'>
-                        <img src="CMULogo.png" alt="Carnegie Mellon University Logo" id = "schoollogo"/>
-                        <div id="schooltext">
-                            <p id="schoolname">Carnegie Mellon University</p>
-                            <p id="schoolyears">2024-2025</p>
-                            <p id="schooldegree">MS in Computer Vision</p>
-                            <br>
-                            <p id="schoolnotes">Perception Research at CMU AirLab</p>
-                        </div>
-                    </div>
-                    <div id="school" style='background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("NUSCampus.jpg"); background-image: -moz-linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("NUSCampus.jpg"); background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 1)), url("NUSCampus.jpg");'>
-                        <img src="NUSLogo.jpg" alt="Canadian International School Logo" id = "schoollogo"/>
-                        <div id="schooltext">
-                            <p id="schoolname">National University of Singapore</p>
-                            <p id="schoolyears">2020-2024</p>
-                            <p id="schooldegree">B. Eng (Hons.) in Mechanical Engineering</p>
-                            <p id="schooldegree2">Highest Distinction</p>
-                            <p id="schooldegree2">2nd Major in Innovation and Design</p>
-                            <br>
-                            <p id="schoolnotes">Chief Engineer and Mentor, AeroNUS</p>
-                            <p id="schoolnotes">Vice President, Innovation and Design Programme Students' Club</p>
-                            <p id="schoolnotes">Projects Director, Aviation Club</p>                        </div>
-                    </div>
-                </div>  
-            </div>
-            <div id="Leadership" class="navable" style="width: 100%; text-align: center;">
-                <p class = "sectiontitle">Leadership</p>
-            </div>
-            <div id="iDPSC" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("IDPSCBkg.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="IDPSCLogo.PNG" alt="iDP Students' Club Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">iDP Students' Club</p>
-                            <p class="experiencedate">January 2021 to December 2022</p>
-                            <p class="experienceposition">Vice President External, formerly Head of Professional Development</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Spent two years in the iDP Students' Club as a way to involve myself better with the community of my second major.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Influenced club direction to focus on improving network with alumni and startup founders.</p>
-                        <p class="experiencedescription">&#x25B8; Assisted subcommittees with logistics, external liaising, and planning for various events, such as the IDEATE 2022 ideathon, UTR Design Fest, and Summer Internship Program.</p>
-                        <p class="experiencedescription">&#x25B8; Directly involved in planning and logistics of iDP Carnival, attracting over 100 students, and a brand new iDP Freshman Orientation Programme.</p>
-                        <p class="experiencedescription">&#x25B8; Previously led a team of 5 in the Professional Development Committee to run an internship program for iDP students, having sourced over 60 internships by working with over 20 companies and various NUS parties.</p>
-                        <p class="experiencedescription">&#x25B8; Organized an industry talk with Apple and contacted judges and sponsors for the IDEATE 2021 ideathon and spearheaded logistics for the judging procedure with 11 judges and 150 students.</p>
-                    </div>
-                </div>    
-            </div>
-            <div id="AeroNUS (Project)" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("AeroNUSBkg2.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="AeroNUS2223Logo.png" alt="AeroNUS 2022 - 2023 Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">AeroNUS</p>
-                            <p class="experiencedate">May 2022 to December 2022</p>
-                            <p class="experienceposition">Mentor</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">After our tenure in AeroNUS, we organised the first AeroNUS bootcamp and created a structured training phase, enabling the new team to achieve a record world #1 ranking for their proposal, and improve on our overall competition result by 15 spots.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Overhauled advertising and recruitment process, bringing in over 55 signups, improving on last year's 30 signups.</p>
-                        <p class="experiencedescription">&#x25B8; Planned and hosted the AeroNUS bootcamp, a hybrid, month-long introductory course for new students interested in joining the team for over 40 participants.</p>
-                        <p class="experiencedescription">&#x25B8; Mentored the new team of 20 in creating their first plane.</p>
-                        <p class="experiencedescription">&#x25B8; Updated MDO sizing program for 2023 AIAA DBF rules and implemented lifting line theory for more precise CL/CD calculations.</p>
-                    </div>
-                    <div class="experiencegallery" onclick="event.stopPropagation()">
-                        <img onclick="custommodal('AeroNUS5')" id="AeroNUS5" src="AeroNUS5.jpg" alt="Performing outreach at Science Center to build community interest in aviation." class="experiencepic">
-                        <img onclick="custommodal('AeroNUS6')" id="AeroNUS6" src="AeroNUS6.jpg" alt="Analyzing plane crash and teaching new team about stress concentrations and building for failure." class="experiencepic">
-                        <img onclick="custommodal('AeroNUS7')" id="AeroNUS7" src="AeroNUS7.jpg" alt="Our first workshop!" class="experiencepic">
-                    </div>
-                </div>    
-            </div>
-            <!-- <div id="Aviation Club" class="experiencediv" style='background-image: linear-gradient(0.25turn, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 80%, rgba(255, 255, 255, 0.5) 100%), url("NUSAC1.jpg");'>
-                <div class="experiencecolumn">
-                    <div class="experiencetop">
-                        <img src="NUSACLogo.png" alt="NUS Aviation Club Logo" class="experiencelogo"/>
-                        <div class="experienceheader">
-                            <p class="experiencename">Aviation Club</p>
-                            <p class="experiencedate">July 2022 to October 2022</p>
-                            <p class="experienceposition">Projects Director</p>
-                        </div>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription">Helped form the first iteration of the Aviation Club to help grow and spread my interests.</p>
-                    </div>
-                    <div class="experiencedesc">
-                        <p class="experiencedescription experienceexpandicon rotate">&#187;</p>
-                    </div>
-                    <div class="experiencebottom">
-                        <p class="experiencedescription">&#x25B8; Hosted drone flying and aeromodelling sessions for over 30 students at our first Aerocamp.</p>
-                        <p class="experiencedescription">&#x25B8; Assisted in forming our founding internal committee of over 20 members, assigning roles to spread workload, and setting direction.</p>
-                    </div>
-                </div>    
-            </div> -->
-            <div id="Skills" class="navable" style="width: 100%; text-align: center;">
-                <p class="sectiontitle">Skills</p>
-            </div>
-            <div class="skilldiv">
-                <div class="skilllist" style='background-image: linear-gradient(0.25turn, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 100%), url("code.png");'>
-                    <div class="skillleft">
-                        <p class="skillheader">Software</p>
-                    </div>
-                    <div class="skillright">
-                        <div class="skillrow">
-                            <p class="skill">PyTorch, Tensorflow, and Keras</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Prompt Engineering</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">LLM Fine-Tuning</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Image Generation and Classification</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Linux</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Python</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Javascript</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Flask, React & NextJS</p>
-                            <!-- <p class="level">&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">AWS</p>
-                            <!-- <p class="level">&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Git</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                    </div>
-                </div>
-                <div class="skilllist"  style='background-image: linear-gradient(0.25turn, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.8) 20%, rgba(0, 0, 0, 1) 100%), url("Full3301Robot.jpg");'>
-                    <div class="skillleft">
-                        <p class="skillheader">Hardware & Robotics</p>
-                    </div>
-                    <div class="skillright">
-                        <div class="skillrow">
-                            <p class="skill">Solidworks | CSWP Certified</p>
-                            <!-- <p class="level">CSWP Certified</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Mechanical Design, Sizing and Optimization</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Manufacturing and Machining</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Aerodynamics, Sizing, and Design</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Circuit Design</p>
-                            <!-- <p class="level">&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">ROS</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Raspberry Pi</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                        <div class="skillrow">
-                            <p class="skill">Arduino</p>
-                            <!-- <p class="level">&#11036;&#11036;&#11036;</p> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                var coll = document.getElementsByClassName("experiencediv");
-                var i;
 
-                for (i = 0; i < coll.length; i++) {
-                    coll[i].addEventListener("click", function() {
-                        // this.classList.toggle("active");
-                        var content = this.querySelector(".experiencebottom");
-                        var icon = this.querySelector(".experienceexpandicon");
-                        icon.classList.toggle("rotate");
-                        icon.classList.toggle("rotate2");
-                        if (content.style.maxHeight){
-                            content.style.maxHeight = null;
-                        } else {
-                            content.style.maxHeight = content.scrollHeight + "px";
-                        }
-                    });
-                }
-            </script>   
-            <div class="footer">
-                <p class="subtitle">Kaustav Mukherjee</p>
-                <div id="iconbox" style="justify-content: center; align-items: center;">
-                    <a href="https://www.linkedin.com/in/kaustavmu/">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-linkedin" viewBox="0 0 16 16">
-                            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/kaustavmu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-github" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                        </svg>
-                    </a>
-                    <a href="mailto:kaustav.mukherjee2020@gmail.com">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" class="bi bi-envelope" viewBox="0 0 16 16">
-                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
-                        </svg>
-                    </a>
+            <div class="research-site">
+                <div class="research-shell">
+                    <section id="about" class="research-row navable about-feature">
+                        <div class="research-content">
+                            <p class="research-intro">Hi! I’m Kaustav. I’m currently an AI Engineer at Kaliber Labs in San Francisco, and a recent graduate of the CMU Robotics Institute, where I earned my Master's in Computer Vision.</p>
+                            <p class="research-intro">My recent work spans from 3D vision and reconstruction pipelines to robotics and world models, with a sprinkle of AI conversational systems in between.</p>
+                        </div>
+                    </section>
+
+                    <section id="publications" class="research-row navable">
+                        <div class="research-label">Publications</div>
+                        <div class="research-content">
+                            <article class="research-entry publication-entry">
+                                <div class="research-item-main">
+                                    <h2>Surface Coverage Completeness for Quality-Assured Arthroscopic 3D Reconstruction</h2>
+                                    <p class="publication-authors">Dmitrii Bychkov, Rutwik Shah, <strong>Kaustav Mukherjee</strong>, Mitchell Ryan So</p>
+                                    <span class="venue-badge">Accepted to ECCV 2026 Workshop DCAMI</span>
+                                    <p class="publication-description">Used truncated signed distance function (TSDF) fusion for real-time 3D reconstruction of the knee during arthroscopic surgery. We found that oblique viewing angles lead to significant drops in reconstruction quality, which has clinical relevance during surgery.</p>
+                                    <div class="project-links" aria-label="Publication links">
+                                        <a href="Surface_Coverage_Completenes.pdf" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2026">2026</time>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="projects" class="research-row navable">
+                        <div class="research-label">Projects</div>
+                        <div class="research-content">
+                            <article class="research-entry project-entry">
+                                <img id="capstone-image" class="project-image" src="Capstone_Image.png" alt="This image shows the planned camera trajectory along with the anchor trajectory, where the anchors are the targets the camera is looking at." onclick="custommodal('capstone-image')" />
+                                <div class="research-item-main">
+                                    <h2>CMU Capstone: Cinematographic Camera Control</h2>
+                                    <p>Developed an autonomous end-to-end cinematographic trajectory generation pipeline with hollywood production company Camera Control.</p>
+                                    <div class="project-links" aria-label="Final capstone project links">
+                                        <a href="Final_Capstone_Poster.pdf" target="_blank" rel="noopener noreferrer">Poster <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2025">2025</time>
+                            </article>
+
+                            <article class="research-entry project-entry">
+                                <img id="bundle-adjustment-image" class="project-image" src="BA.png" alt="360 image deconstructed into cubemap projection." onclick="custommodal('bundle-adjustment-image')" />
+                                <div class="research-item-main">
+                                    <h2>Bundle Adjustment for 360° Pose Correction</h2>
+                                    <p>Used bundle adjustment with neural image feature descriptors to improve gaussian splat 3D reconstruction quality from 360° images.</p>
+                                    <div class="project-links" aria-label="Bundle adjustment project links">
+                                        <a href="Bundle_Adjustment_for_360_Pose_Correction.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2025">2025</time>
+                            </article>
+
+                            <article class="research-entry project-entry">
+                                <img id="textok-dit-image" class="project-image" src="Multimodal.png" alt="TexTok-DiT Front Page Image" onclick="custommodal('textok-dit-image')" />
+                                <div class="research-item-main">
+                                    <h2>TexTok-DiT</h2>
+                                    <p>Explored multimodal text-conditioned generation with a diffusion transformer architecture.</p>
+                                    <div class="project-links" aria-label="TexTok-DiT project links">
+                                        <a href="Multimodal.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a>
+                                        <a href="https://github.com/kaustavmu/TexTok-DiT">Code <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2025">2025</time>
+                            </article>
+
+                            <article class="research-entry project-entry">
+                                <img id="avatarsftw-image" class="project-image" src="AvatarsFTW.png" alt="AvatarsFTW Project Results" onclick="custommodal('avatarsftw-image')" />
+                                <div class="research-item-main">
+                                    <h2>AvatarsFTW: 3D Human Avatars From the Wild</h2>
+                                    <p>Created a pipeline to improve performance of SOTA 3D human avatar generation models on in-the-wild images.</p>
+                                    <div class="project-links" aria-label="AvatarsFTW project links">
+                                        <a href="https://www.kaustavmukherjee.com/AvatarsFTWPage/">Project Page <span aria-hidden="true">↗</span></a>
+                                        <a href="https://www.kaustavmukherjee.com/AvatarsFTWPage/static/pdfs/AvatarFTW_Report.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a>
+                                        <a href="https://github.com/kaustavmu/AvatarsFTW">Code <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2025">2024</time>
+                            </article>
+
+                            <article class="research-entry project-entry">
+                                <img id="smartresets-image" class="project-image" src="SmartResets.png" alt="SmartResets Choose Policy Diagram" onclick="custommodal('smartresets-image')" />
+                                <div class="research-item-main">
+                                    <h2>Smart Resets: Dynamic Schedules and Cost-Aware Resets for Faster Autonomous Reinforcement Learning</h2>
+                                    <p>Developed a framework for improving exploration and safety in reinforcement learning by incorporating dynamic reset triggers and adaptive reset strategies.</p>
+                                    <div class="project-links" aria-label="Smart Resets project links">
+                                        <a href="https://www.kaustavmukherjee.com/AvatarsFTWPage/static/pdfs/SmartResets.pdf" target="_blank" rel="noopener noreferrer">Report <span aria-hidden="true">↗</span></a>
+                                        <a href="https://github.com/kaustavmu/LeaveNoTraceRLProj/">Code <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2025">2024</time>
+                            </article>
+
+                            <article class="research-entry project-entry">
+                                <img id="npo-image" class="project-image" src="Plane.png" alt="Image depicting airflow over a plane." onclick="custommodal('npo-image')" />
+                                <div class="research-item-main">
+                                    <h2>Neural Plane Optimization</h2>
+                                    <p>Implementation and experimentation with neural plane optimization for 3D scene representation.</p>
+                                    <div class="project-links" aria-label="Neural Plane Optimization project links">
+                                        <a href="https://github.com/kaustavmu/Neural-Plane-Optimization">Code <span aria-hidden="true">↗</span></a>
+                                    </div>
+                                </div>
+                                <time class="research-meta" datetime="2024">2024</time>
+                            </article>
+
+                        </div>
+                    </section>
+
+                    <section id="education" class="research-row navable compact-section">
+                        <div class="research-label">Education</div>
+                        <div class="research-content">
+                            <article class="research-entry school-entry">
+                                <div class="research-item-main">
+                                    <h2>Carnegie Mellon University (CMU)</h2>
+                                    <p class="research-role">Master of Science in Computer Vision (MSCV)</p>
+                                    <p>Perception Research at CMU AirLab</p>
+                                </div>
+                                <time class="research-meta" datetime="2024">2024–2025</time>
+                            </article>
+                            <article class="research-entry school-entry">
+                                <div class="research-item-main">
+                                    <h2>National University of Singapore (NUS)</h2>
+                                    <p class="research-role">Bachelor of Engineering in Mechanical Engineering</p>
+                                    <p>Highest Distinction · 2nd Major in Innovation and Design</p>
+                                </div>
+                                <time class="research-meta" datetime="2020">2020–2024</time>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="work" class="research-row navable compact-section">
+                        <div class="research-label">Work</div>
+                        <div class="research-content">
+                            <article class="research-entry">
+                                <div class="research-item-main">
+                                    <h2>Kaliber Labs</h2>
+                                    <p class="research-role">
+                                        <span class="role-line">AI Engineer</span>
+                                    </p>
+                                </div>
+                                <time class="research-meta" datetime="2025">2023–2026</time>
+                            </article>
+                            <article class="research-entry">
+                                <div class="research-item-main">
+                                    <h2>F-Drones</h2>
+                                    <p class="research-role">Systems Engineering Intern</p>
+                                </div>
+                                <time class="research-meta" datetime="2022">2022</time>
+                            </article>
+                            <article class="research-entry">
+                                <div class="research-item-main">
+                                    <h2>SciFie Robotics</h2>
+                                    <p class="research-role">Robotics Engineering Intern</p>
+                                </div>
+                                <time class="research-meta" datetime="2021">2021</time>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="skills" class="research-row navable">
+                        <div class="research-label">Skills</div>
+                        <div class="research-content skill-list">
+                            <div class="skill-category">
+                                <span class="skill-category-label">Competencies</span>
+                                <div class="skill-tags">
+                                    <span>Generative AI (Diffusion, World Models)</span>
+                                    <span>LLM Fine-tuning</span>
+                                    <span>Reinforcement Learning</span>
+                                    <span>3D Computer Vision</span>
+                                    <span>Model Quantization</span>
+                                    <span>Context Engineering</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <span class="skill-category-label">Frameworks</span>
+                                <div class="skill-tags">
+                                    <span>PyTorch</span>
+                                    <span>TensorFlow</span>
+                                    <span>NumPy</span>
+                                    <span>OpenCV</span>
+                                    <span>ROS2</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <span class="skill-category-label">Tools</span>
+                                <div class="skill-tags">
+                                    <span>Docker</span>
+                                    <span>Redis</span>
+                                    <span>NATS</span>
+                                    <span>ONNX</span>
+                                    <span>AWS</span>
+                                    <span>Linux</span>
+                                </div>
+                            </div>
+                            <div class="skill-category">
+                                <span class="skill-category-label">Languages</span>
+                                <div class="skill-tags">
+                                    <span>Python</span>
+                                    <span>C++</span>
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-            </div>    
+
+                <footer class="research-footer">
+                    <div class="research-shell">
+                        <span>Kaustav Mukherjee</span>
+                        <a href="#homediv">Back to top ↑</a>
+                    </div>
+                </footer>
+            </div>
         </div>
     </body>
 </html>
